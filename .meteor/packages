@@ -22,3 +22,6 @@ react
 mgreystone:reactive-nav-menu
 fourseven:scss
 johnantoni:meteor-normalize
+mgreystone:books-core
+mgreystone:books-scifi
+mgreystone:books-fantasy

@@ -10,6 +10,7 @@
     "meteor": true
   },
   "globals": {
+    "Books": true,
     "classNames": false,
     "EventEmitter": false,
     "Menu": true,

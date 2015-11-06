@@ -42,6 +42,9 @@ logging@1.0.8
 maxharris9:classnames@0.0.1
 meteor@1.1.10
 meteor-base@1.0.1
+mgreystone:books-core@0.0.1
+mgreystone:books-fantasy@0.0.1
+mgreystone:books-scifi@0.0.1
 mgreystone:reactive-nav-menu@0.0.1
 minifiers@1.1.7
 minimongo@1.0.10

@@ -2,64 +2,73 @@ body {
   padding: 1em;
 }
 
-.reactive-menu {
-  $reactive-menu: #{&};
-
+.reactive-menu-basic {
   &__item {
     &::before {
       content: '';
       display: inline-block;
       margin: 0 1ex 0 0;
-      width: 1ex; 
+      width: 1ex;
     }
 
     &--has-children {
       &::before {
         content: '▾';
-        transform: translateY(0.125em) rotate(-90deg);
-      }
-
-      #{$reactive-menu}__submenu {
-        max-height: 0;
-
-        overflow: {
-          y: hidden;
-        }
-      }
-    }
-
-    &--has-children#{&}--expanded {
-      &::before {
-        transform: rotate(0);
-      }
-
-      #{$reactive-menu}__submenu {
-        max-height: 6em;
-      }
-    }
-
-    &--has-children#{&}--animating {
-      $submenu-transition-duration: 0.3s;
-
-      &::before {
-        transition: {
-          duration: $submenu-transition-duration;
-          property: transform;
-        }
-      }
-
-      #{$reactive-menu}__submenu {
-        transition: {
-          duration: $submenu-transition-duration;
-          property: max-height;
-        }
       }
     }
 
     &--level1 & {
       margin: {
-        left: 4ex;
+        left: 2ex;
       }
-    }  
+    }
+  }
+}
+
+.reactive-menu-complete {
+  $__item--level1--expanded: #{&}__item--level1#{&}__item--expanded;
+  $__item--level1--animating: #{&}__item--level1#{&}__item--animating;
+  $color-background: #d3d3d3;
+
+  background: $color-background;
+  display: flex;
+
+  &__item--level1 {
+    padding: 0.5em;
+    position: relative;
+  }
+
+  &__item--level1#{&}__item--has-children &__link--level1::after {
+    content: '▾';
+    display: inline-block;
+    margin: 0 0 0 1ex;
+  }
+
+  &__submenu--level1 {
+    background: $color-background;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    padding: 0 0.5em;
+    pointer-events: none;
+    transform: translateY(-0.75em);
+    white-space: nowrap;
+
+    #{$__item--level1--expanded} & {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    #{$__item--level1--animating} & {
+      transition: {
+        duration: 0.2s;
+        property: opacity, transform;
+      }
+    }
+  }
+
+  &__item--level2 {
+    margin: 0.5em 0;
   }
 }
