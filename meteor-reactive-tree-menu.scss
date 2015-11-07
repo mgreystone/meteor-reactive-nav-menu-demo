@@ -47,17 +47,17 @@ body {
   &__submenu--level1 {
     background: $color-background;
     left: 0;
-    position: absolute;
     opacity: 0;
     padding: 0 0.5em;
     pointer-events: none;
+    position: absolute;
     transform: translateY(-0.75em);
     white-space: nowrap;
 
     #{$__item--level1--expanded} & {
       opacity: 1;
-      transform: translateY(0);
       pointer-events: all;
+      transform: translateY(0);
     }
 
     #{$__item--level1--animating} & {

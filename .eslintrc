@@ -18,7 +18,7 @@
     "MenuMixin": true,
     "React": false,
     "ReactDOM": false,
-    "ReactiveMenu": false
+    "ReactiveMenu": true
   },
   "rules": {
     "react/display-name": 2,
