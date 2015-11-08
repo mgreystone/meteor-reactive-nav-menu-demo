@@ -1,7 +1,17 @@
+function addBadge (menuId, itemId) {
+  const menu = ReactiveMenu.getMenu(menuId)
+  const item = menu.getItem(itemId)
+  item.badge++
+}
+
 if (Meteor.isClient) {
   const App = React.createClass({
 
     displayName: 'App',
+
+    onInboxBadgeClick: addBadge.bind(undefined, 'mailbox', 'inbox'),
+    onOutboxBadgeClick: addBadge.bind(undefined, 'mailbox', 'outbox'),
+    onSentBadgeClick: addBadge.bind(undefined, 'mailbox', 'sent'),
 
     render () {
       return (
@@ -34,6 +44,37 @@ if (Meteor.isClient) {
           </p>
 
           <Books.Menu className='reactive-menu-complete' />
+
+          <h2>Reactive Example</h2>
+
+          <p>
+            The menus are reactive. When a package updates the menu via the API,
+            the UI updates automatically. See below how you can add badges
+            to each of the menu items.
+          </p>
+
+          <ReactiveMenu.Menu className='reactive-menu-basic' id='mailbox' />
+
+          <button
+            onClick={this.onInboxBadgeClick}
+            type='button'
+          >
+            Add Badge to Inbox
+          </button>
+
+          <button
+            onClick={this.onOutboxBadgeClick}
+            type='button'
+          >
+            Add Badge to Outbox
+          </button>
+
+          <button
+            onClick={this.onSentBadgeClick}
+            type='button'
+          >
+            Add Badge to Sent
+          </button>
         </div>
       )
     }

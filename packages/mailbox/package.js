@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'mgreystone:books-fantasy',
+  name: 'mgreystone:mailbox',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -12,22 +12,18 @@ Package.describe({
 
 Package.onUse(function (api) {
   api.versionsFrom('1.2.1')
-
   const packages = [
-    'ecmascript@0.1.6',
-    'mgreystone:reactive-nav-menu@0.0.1',
-    'mgreystone:books-core@0.0.1'
+    'ecmascript',
+    'mgreystone:reactive-nav-menu@0.0.1'
   ]
-
   api.use(packages)
   api.imply(packages)
-
-  api.addFiles('books-fantasy.js', 'client')
+  api.addFiles('mailbox.js', 'client')
 })
 
 Package.onTest(function (api) {
   api.use('ecmascript')
   api.use('tinytest')
-  api.use('mgreystone:books-fantasy')
-  api.addFiles('books-fantasy-tests.js')
+  api.use('mgreystone:mailbox')
+  api.addFiles('mailbox-tests.js')
 })

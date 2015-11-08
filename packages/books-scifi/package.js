@@ -15,7 +15,8 @@ Package.onUse(function (api) {
 
   const packages = [
     'ecmascript@0.1.6',
-    'mgreystone:reactive-nav-menu@0.0.1'
+    'mgreystone:reactive-nav-menu@0.0.1',
+    'mgreystone:books-core@0.0.1'
   ]
 
   api.use(packages)

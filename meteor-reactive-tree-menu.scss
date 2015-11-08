@@ -3,6 +3,8 @@ body {
 }
 
 .reactive-menu-basic {
+  margin: 1em 0;
+
   &__item {
     &::before {
       content: '';
@@ -22,6 +24,42 @@ body {
         left: 2ex;
       }
     }
+  }
+
+  &__badge {
+    $color: #fff;
+    $color-background: #f00;
+    $color-shadow: #ccc;
+
+    background: $color-background;
+
+    border: {
+      radius: 0.5rem;
+    }
+
+    box: {
+      shadow: 0.25em 0.25em 0.125em $color-shadow;
+      sizing: border-box;
+    }
+
+    color: $color;
+    display: inline-block;
+
+    font: {
+      size: 0.75rem;
+    }
+
+    left: 0.125rem;
+    line-height: 1rem;
+    min-width: 1.25em;
+    padding: 0 0.25em;
+    position: relative;
+
+    text: {
+      align: center;
+    }
+
+    top: -0.5em;
   }
 }
 
