@@ -1,0 +1,3 @@
+[submodule "packages/reactive-nav-menu"]
+	path = packages/reactive-nav-menu
+	url = git@github.com:mgreystone/meteor-reactive-nav-menu.git
