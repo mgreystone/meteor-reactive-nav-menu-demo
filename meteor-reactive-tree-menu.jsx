@@ -21,6 +21,11 @@ if (Meteor.isClient) {
             This package creates reactive menus for different packages to
             utilize.
           </p>
+          <p>
+            <a href='https://github.com/mgreystone/meteor-reactive-nav-menu'>
+              Get the Source!
+            </a>
+          </p>
 
           <h2>Basic Example</h2>
           <p>
