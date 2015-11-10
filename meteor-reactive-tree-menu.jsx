@@ -48,7 +48,7 @@ if (Meteor.isClient) {
             example.
           </p>
 
-          <Books.Menu className='reactive-menu-complete' />
+          <Books.Menu className='reactive-menu-complete' expandable />
 
           <h2>Reactive Example</h2>
 
